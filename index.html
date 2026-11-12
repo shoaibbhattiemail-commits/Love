@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aqsa ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Georgia,serif;
+ background:linear-gradient(135deg,#27051c,#6d1745,#b83e72);
+ color:white;
+ text-align:center;
+ overflow-x:hidden;
+}
+section{
+ min-height:100vh;
+ padding:70px 18px;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+}
+h1{font-size:clamp(36px,7vw,65px);color:#ffd4e5}
+h2{color:#ffb9d3;font-size:32px}
+p{font-size:19px;line-height:1.8;max-width:650px}
+button{
+ background:#ffb5d0;
+ color:#5a1536;
+ border:0;
+ padding:15px 28px;
+ border-radius:30px;
+ font-size:17px;
+ cursor:pointer;
+ margin:12px;
+ box-shadow:0 5px 20px #0005;
+}
+button:hover{transform:scale(1.06)}
+.hidden{display:none!important}
+.card{
+ background:#ffffff15;
+ backdrop-filter:blur(12px);
+ border:1px solid #ffffff40;
+ border-radius:25px;
+ padding:25px;
+ max-width:750px;
+ width:100%;
+}
+.frame{
+ padding:12px;
+ background:linear-gradient(135deg,#ffd7e7,#dca0b8,#fff0d5);
+ border:5px solid #f9d4df;
+ border-radius:20px;
+ box-shadow:0 0 35px #ff9fc8;
+ max-width:340px;
+ margin:20px auto;
+}
+.frame img{
+ width:100%;
+ height:390px;
+ object-fit:cover;
+ border-radius:12px;
+ display:block;
+}
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+ gap:14px;
+ max-width:950px;
+ width:100%;
+ margin:25px auto;
+}
+.gallery img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+ border-radius:15px;
+ border:3px solid #ffd2e2;
+ box-shadow:0 5px 20px #0005;
+ transition:.3s;
+}
+.gallery img:hover{transform:scale(1.04)}
+.heart{
+ position:fixed;
+ bottom:-30px;
+ animation:float 7s linear infinite;
+ pointer-events:none;
+ z-index:5;
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+.cake{font-size:100px;animation:bounce 1s infinite alternate}
+@keyframes bounce{to{transform:translateY(-15px)}}
+#letter{
+ white-space:pre-line;
+ text-align:left;
+ font-size:20px;
+ line-height:1.9;
+}
+footer{padding:30px;color:#ffd4e5}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop></audio>
+
+<!-- MUSIC -->
+<div style="position:fixed;top:12px;right:12px;z-index:10">
+ <button onclick="document.getElementById('music').play()">🎵 Play Music</button>
+ <button onclick="document.getElementById('music').pause()">⏸</button>
+ <label style="font-size:12px">
+  <input type="file" id="song" accept="audio/*" style="width:115px">
+ </label>
+</div>
+
+<!-- STEP 1 -->
+<section id="step1">
+ <div class="card">
+  <h1>Hey Aqsa! ❤️</h1>
+  <p>Someone has prepared a little surprise for you...</p>
+  <div style="font-size:75px">🎁🌹✨</div>
+  <p>Are you ready to open something special?</p>
+  <button onclick="next(2)">Open Your Surprise ❤️</button>
+ </div>
+</section>
+
+<!-- STEP 2 -->
+<section id="step2" class="hidden">
+ <h1>Happy Birthday Aqsa! 🎂</h1>
+ <div class="frame">
+  <img src="WhatsApp%20Image%202026-11-10%20at%208.14.04%20AM%20(13)(1).jpeg">
+ </div>
+ <h2>To Someone Special ❤️</h2>
+ <p>Today is all about you. Your smile, your happiness,
+ and all the beautiful memories you bring.</p>
+ <button onclick="next(3)">Continue Your Surprise 💕</button>
+</section>
+
+<!-- STEP 3 -->
+<section id="step3" class="hidden">
+ <h1>Our Beautiful Memories 📸</h1>
+ <p>Every picture tells a little story.</p>
+ <div class="gallery" id="gallery"></div>
+ <button onclick="next(4)">One More Surprise 💌</button>
+</section>
+
+<!-- STEP 4 -->
+<section id="step4" class="hidden">
+ <h1>A Little Letter For You 💗</h1>
+ <div class="card">
+  <div style="font-size:55px">💌</div>
+  <div id="letter">
+My Dear Aqsa ❤️,
+
+On your special day, I just want to remind you
+how special you are.
+
+Your beautiful smile makes ordinary moments
+feel extraordinary.
+
+I hope your life is always filled with happiness,
+peace, love and countless reasons to smile.
+
+May every dream in your heart come true.
+
+Thank you for being a beautiful part of my life.
+
+Happy Birthday, Aqsa! ❤️
+
+With lots of love,
+Someone who wishes you the best.
+  </div>
+ </div>
+ <button onclick="next(5)">See Your Birthday Cake 🎂</button>
+</section>
+
+<!-- STEP 5 -->
+<section id="step5" class="hidden">
+ <h1>Make A Birthday Wish! ✨</h1>
+ <div class="cake">🎂</div>
+ <h2>Happy Birthday Aqsa!</h2>
+ <p>Close your eyes, make a beautiful wish
+ and imagine all your dreams coming true.</p>
+ <button onclick="blow()">Blow The Candles 🕯️</button>
+ <div id="cakeMessage" class="hidden">
+  <h1>🎉🎉🎉</h1>
+  <h2>Your wish deserves to come true! ❤️</h2>
+  <p>May your next year be the most beautiful one yet.</p>
+ </div>
+ <button onclick="next(6)">Final Surprise ❤️</button>
+</section>
+
+<!-- STEP 6 -->
+<section id="step6" class="hidden">
+ <h1>For You, Aqsa ❤️</h1>
+ <div style="font-size:100px">💖🌹💖</div>
+ <div class="card">
+  <h2>You Are Special!</h2>
+  <p>
+  If I could give you one thing in life,
+  it would be the ability to see yourself
+  through my eyes.
+
+  Then you would understand just how
+  wonderful and special you are.
+
+  Happy Birthday, Aqsa! ❤️
+  </p>
+ </div>
+ <h1>Forever Stay Happy! 🥰</h1>
+ <button onclick="next(1)">Watch Again 🔁</button>
+</section>
+
+<footer>Made with ❤️ for Aqsa</footer>
+
+<script>
+const photos = [
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (13)(1).jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (14) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (14)(1).jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (15)(1).jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (16) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (17) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (18)(1).jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (19) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (20) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (24) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (19) - Copy - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (20) - Copy - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (25) - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM (22) - Copy - Copy.jpeg",
+"WhatsApp Image 2026-11-10 at 8.14.04 AM - Copy (2).jpeg"
+];
+
+const gallery=document.getElementById("gallery");
+
+photos.forEach(src=>{
+ const img=document.createElement("img");
+ img.src=src;
+ img.alt="Aqsa birthday memory";
+ img.loading="lazy";
+ img.onerror=()=>img.style.display="none";
+ gallery.appendChild(img);
+});
+
+function next(n){
+ document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
+ document.getElementById("step"+n).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function blow(){
+ document.getElementById("cakeMessage").classList.remove("hidden");
+ confetti();
+}
+
+function confetti(){
+ for(let i=0;i<80;i++){
+  const el=document.createElement("div");
+  el.innerHTML=["❤️","💖","🌸","✨","🎉"][Math.floor(Math.random()*5)];
+  el.className="heart";
+  el.style.left=Math.random()*100+"vw";
+  el.style.fontSize=(15+Math.random()*25)+"px";
+  el.style.animationDuration=(3+Math.random()*5)+"s";
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),8000);
+ }
+}
+
+setInterval(()=>{
+ const el=document.createElement("div");
+ el.innerHTML="💗";
+ el.className="heart";
+ el.style.left=Math.random()*100+"vw";
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),7000);
+},900);
+
+// Load your own birthday song
+const songInput=document.getElementById("song");
+const music=document.getElementById("music");
+let songURL;
+
+songInput.addEventListener("change",()=>{
+ if(songURL) URL.revokeObjectURL(songURL);
+ const file=songInput.files[0];
+ if(file){
+  songURL=URL.createObjectURL(file);
+  music.src=songURL;
+  music.play().catch(()=>alert("Press Play Music to start."));
+ }
+});
+</script>
+
+</body>
+</html>
